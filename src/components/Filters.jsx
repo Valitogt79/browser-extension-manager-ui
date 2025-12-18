@@ -1,6 +1,6 @@
 import { Button } from "./Button";
 
-export const Filters = ({ setFilter }) => {
+export const Filters = ({ filter, setFilter }) => {
 
   const handleClick = (event) => {
     setFilter(event.target.textContent)
@@ -12,9 +12,9 @@ export const Filters = ({ setFilter }) => {
         Extensions List
       </h2>
       <div className="flex justify-between md:gap-4 ">
-        <Button handleClick={handleClick}>All</Button>
-        <Button handleClick={handleClick}>Active</Button>
-        <Button handleClick={handleClick}>Inactive</Button>
+        <Button active={filter === 'All'} handleClick={handleClick}>All</Button>
+        <Button active={filter === 'Active'} handleClick={handleClick}>Active</Button>
+        <Button active={filter === 'Inactive'} handleClick={handleClick}>Inactive</Button>
       </div>
     </div>
   );

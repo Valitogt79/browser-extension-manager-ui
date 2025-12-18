@@ -16,7 +16,10 @@ export const Card = ({ logo, name, description, isActive, extensions, setExtensi
     setExtensions(newExtension)
   }
 
-
+  const onRemove = () => {
+    const filterExtension = extensions.filter(extension => extension.name !== name)
+    setExtensions(filterExtension)
+  }
 
   return (
     <div className="bg-neutral-0 rounded-lg p-4 shadow-sm dark:bg-neutral-800 ">
@@ -32,7 +35,7 @@ export const Card = ({ logo, name, description, isActive, extensions, setExtensi
         </div>
       </div>
       <div className="flex items-center justify-between">
-        <Button textSmall>Remove</Button>
+        <Button handleClick={onRemove} textSmall>Remove</Button>
         <Toggle onClick={onToggle} checked={isActive} color="red" />
       </div>
     </div>
