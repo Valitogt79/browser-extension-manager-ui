@@ -1,12 +1,27 @@
-# React + Vite
+# Browser Extension Manager UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a responsive user interface for managing a list of browser extensions, built as a solution to a challenge from Frontend Mentor. The application allows users to view, filter, and interact with a collection of extensions loaded from a local data source.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Dynamic Extension List:** Displays a grid of extensions from a local JSON data file.
+- **Status Filtering:** Users can filter the list to show "All", "Active", or "Inactive" extensions.
+- **Client-Side Updates:** Extensions can be removed from the list or their active status can be toggled directly from the UI.
+- **Dark/Light Theme:** Includes a theme switcher that toggles between a light and dark mode, with the user's preference saved in local storage.
 
-## Expanding the ESLint configuration
+## Built with
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React:** A JavaScript library for building user interfaces.
+- **Vite:** A modern frontend build tool that provides a fast development experience.
+- **CSS with Tailwind CSS utilities:** The styling is implemented using plain CSS, leveraging utility-first principles similar to Tailwind CSS for the class names.
+
+## Key Learnings
+
+This project provided an opportunity to practice and solidify core React concepts, including:
+
+- **Component-Based Architecture:** The application is structured into reusable components for the header, filters, and extension cards, promoting modularity and maintainability.
+- **State Management with Hooks:** State is managed using React Hooks (`useState` and `useEffect`) to handle filtering logic, theme changes, and client-side data modifications.
+- **Props and State Lifting:** Data and state management functions are passed down from parent to child components, demonstrating the concept of lifting state up to a common ancestor.
+- **Event Handling:** Implemented various event handlers for user interactions such as button clicks and toggles.
+- **Local Data Handling:** The application fetches and processes data from a local `data.json` file, simulating how a real-world application might handle data from an API.
+- **DOM Manipulation and Local Storage:** Utilized `localStorage` to persist the theme preference across sessions and directly manipulated the `documentElement` to apply theme classes.
